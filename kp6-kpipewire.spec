@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.2
+%define		kdeplasmaver	6.0.3
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp6-%{kpname}
-Version:	6.0.2
+Version:	6.0.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3eff923362e363a88a04d1547103b44a
+# Source0-md5:	c64d5a3b3a2a38e1efaaa18ec0ed0f15
 URL:		http://www.kde.org/
 BuildRequires:	Qt6WaylandClient-devel
 BuildRequires:	cmake >= 3.16.0
