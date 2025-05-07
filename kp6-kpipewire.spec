@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.3.4
+%define		kdeplasmaver	6.3.5
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp6-%{kpname}
-Version:	6.3.4
+Version:	6.3.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	390bfb8bdc4d8e8b27be9a391881eb82
+# Source0-md5:	0d4755bba080ca93df688620ebc557bb
 URL:		http://www.kde.org/
 BuildRequires:	Qt6WaylandClient-devel
 BuildRequires:	cmake >= 3.16.0
@@ -25,7 +25,7 @@ BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Obsoletes:	kp5-%{kpname} < %{version}
+Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,7 +38,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cmake >= 3.16
-Obsoletes:	kp5-%{kpname}-devel < %{version}
+Obsoletes:	kp5-%{kpname}-devel < 6
 
 %description devel
 Header files for %{kpname} development.
