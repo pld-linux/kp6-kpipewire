@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.3.5
+%define		kdeplasmaver	6.4.0
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp6-%{kpname}
-Version:	6.3.5
+Version:	6.4.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	0d4755bba080ca93df688620ebc557bb
+# Source0-md5:	fdb0299ed6aecedfffe6779317353da6
 URL:		http://www.kde.org/
 BuildRequires:	Qt6WaylandClient-devel
 BuildRequires:	cmake >= 3.16.0
@@ -81,23 +81,23 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libKPipeWireRecord.so.6
 %attr(755,root,root) %{_libdir}/libKPipeWireRecord.so.*.*
 %dir %{_libdir}/qt6/qml/org/kde/pipewire
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/libKPipeWireDeclarative.so
+%{_libdir}/qt6/qml/org/kde/pipewire/KPipeWire.qmltypes
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/libKPipeWireplugin.so
 %{_libdir}/qt6/qml/org/kde/pipewire/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/pipewire/monitor
 %dir %{_libdir}/qt6/qml/org/kde/pipewire/record
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/record/libKPipeWireRecordDeclarative.so
+%{_libdir}/qt6/qml/org/kde/pipewire/record/KPipeWireRecord.qmltypes
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/record/libKPipeWireRecordplugin.so
 %{_libdir}/qt6/qml/org/kde/pipewire/record/qmldir
 %{_datadir}/qlogging-categories6/kpipewire.categories
 %{_datadir}/qlogging-categories6/kpipewirerecord.categories
 %ghost %{_libdir}/libKPipeWireDmaBuf.so.6
-%attr(755,root,root) %{_libdir}/libKPipeWireDmaBuf.so.*.*.*
-%{_libdir}/qt6/qml/org/kde/pipewire/KPipeWireDeclarative.qmltypes
+%attr(755,root,root) %{_libdir}/libKPipeWireDmaBuf.so.*.*
 %{_libdir}/qt6/qml/org/kde/pipewire/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/pipewire/monitor/KPipeWireMonitorDeclarative.qmltypes
 %{_libdir}/qt6/qml/org/kde/pipewire/monitor/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/monitor/libKPipeWireMonitorDeclarative.so
 %{_libdir}/qt6/qml/org/kde/pipewire/monitor/qmldir
-%{_libdir}/qt6/qml/org/kde/pipewire/record/KPipeWireRecordDeclarative.qmltypes
 %{_libdir}/qt6/qml/org/kde/pipewire/record/kde-qmlmodule.version
 
 %files devel
