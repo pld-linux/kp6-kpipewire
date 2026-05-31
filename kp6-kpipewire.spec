@@ -33,6 +33,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 kpipewire offers a set of convenient classes to use PipeWire
 (https://pipewire.org/) in Qt projects.
 
+%description -l pl.UTF-8
+kpipewire dostarcza zestawu przydatnych klas do użycia PipeWire
+(https://pipewire.org/) w projektach Qt.
+
 %package devel
 Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
