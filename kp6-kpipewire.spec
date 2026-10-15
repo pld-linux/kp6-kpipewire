@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.7.5
+%define		kdeplasmaver	6.8.0
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	61eb274264743031744b995ae2600a0a
+# Source0-md5:	bede5d7838a03519408a5a0f6493661f
 URL:		http://www.kde.org/
 BuildRequires:	Qt6WaylandClient-devel
 BuildRequires:	cmake >= 3.16.0
@@ -85,6 +85,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKPipeWire.so.*.*
 %ghost %{_libdir}/libKPipeWireRecord.so.6
 %{_libdir}/libKPipeWireRecord.so.*.*
+%ghost %{_libdir}/libKPipeWireMonitor.so.6
+%{_libdir}/libKPipeWireMonitor.so.*.*
 %dir %{_libdir}/qt6/qml/org/kde/pipewire
 %{_libdir}/qt6/qml/org/kde/pipewire/KPipeWire.qmltypes
 %{_libdir}/qt6/qml/org/kde/pipewire/libKPipeWireplugin.so
@@ -99,9 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libKPipeWireDmaBuf.so.6
 %{_libdir}/libKPipeWireDmaBuf.so.*.*
 %{_libdir}/qt6/qml/org/kde/pipewire/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/pipewire/monitor/KPipeWireMonitorDeclarative.qmltypes
+%{_libdir}/qt6/qml/org/kde/pipewire/monitor/KPipeWireMonitor.qmltypes
 %{_libdir}/qt6/qml/org/kde/pipewire/monitor/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/pipewire/monitor/libKPipeWireMonitorDeclarative.so
+%{_libdir}/qt6/qml/org/kde/pipewire/monitor/libKPipeWireMonitorplugin.so
 %{_libdir}/qt6/qml/org/kde/pipewire/monitor/qmldir
 %{_libdir}/qt6/qml/org/kde/pipewire/record/kde-qmlmodule.version
 
@@ -112,3 +114,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKPipeWire.so
 %{_libdir}/libKPipeWireRecord.so
 %{_libdir}/libKPipeWireDmaBuf.so
+%{_libdir}/libKPipeWireMonitor.so
+
